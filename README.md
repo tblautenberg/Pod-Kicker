@@ -2,7 +2,7 @@
 
 To get Pod Kicker up and running, make sure you’ve got the following in place:
 
-1, GitHub Actions CI/CD pipeline in your application’s GitHub repo — it should be configured to build and push your image to Docker Hub. 🐙⚙️
+1, GitHub Actions CI/CD pipeline in your application’s GitHub repo — it should be configured to build and push your image to Docker Hub.
 2. A webhook set up on Docker Hub to trigger whenever a new image is pushed. 🔁🐳
 
 That’s it! 🎉
