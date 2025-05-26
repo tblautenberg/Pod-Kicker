@@ -1,43 +1,28 @@
-🚀 Pod Kicker
-Pod Kicker is a lightweight web server written in Go, designed to automatically restart existing Kubernetes deployments whenever a new image is pushed to Docker Hub.
+Pod Kicker
+Pod Kicker is a lightweight Go-based web server designed to automatically restart Kubernetes deployments when a new container image is pushed to Docker Hub.
 
-🔧 Prerequisites
-To get Pod Kicker working, make sure the following are in place:
+Overview
+When integrated into your CI/CD pipeline, Pod Kicker listens for webhook events from Docker Hub and triggers a rollout restart of the specified deployment in your Kubernetes cluster.
 
-GitHub Actions CI/CD pipeline
-Your application’s GitHub repository should include a workflow that builds and pushes your Docker image to Docker Hub.
-🐙⚙️
+Requirements
+To use Pod Kicker, ensure the following:
 
-Webhook on Docker Hub
-Configure a webhook to trigger when a new image is pushed.
-🔁🐳
+A GitHub Actions workflow configured to build and push your Docker image to Docker Hub.
 
-That's all it takes! 🎉
+A Docker Hub webhook configured to send a POST request to Pod Kicker when a new image is pushed.
 
-📦 Running Pod Kicker in Kubernetes
-You can run Pod Kicker in your Kubernetes cluster in one of two ways:
+Usage
+Pod Kicker can be run inside Kubernetes either by building your own Docker image or by using the latest pre-built image available at:
+XXXXXXXXX
 
-Build your own image
-Clone the repo and build your own Docker image — customize as needed.
+By default, the server listens on port 8450 and currently supports a single POST endpoint:
 
-Use the latest pre-built image
-Pull the latest from: XXXXXXXXX
-🧪
+Kopiér
+Rediger
+/KickThatPod
+Additional endpoints and features are planned for future releases.
 
-Pod Kicker listens on port 8450 by default.
+Permissions
+Ensure the Pod Kicker deployment has the necessary RBAC permissions to restart deployments. At a minimum, it requires get, list, and patch permissions on deployments in the relevant namespaces.
 
-🔁 Available Endpoint
-POST /KickThatPod
-Triggers a rollout restart of the target deployment.
-
-More endpoints coming soon! 😺
-
-🔐 RBAC Permissions
-Make sure your Pod Kicker deployment has the necessary RBAC permissions to restart deployments within your cluster.
-
-You’ll need to grant it access to:
-
-get, list, and patch on deployments in the appropriate namespace.
-
-📄 License
-MIT — feel free to use, modify, and contribute! 🤘
+Let me know if you'd like a sample Kubernetes deployment manifest or RBAC configuration to go with this.
