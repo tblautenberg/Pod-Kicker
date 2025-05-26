@@ -28,4 +28,7 @@ Additional endpoints and features are planned for future releases.
 
 Ensure the Pod Kicker deployment has the necessary RBAC permissions to restart deployments. At a minimum, it requires get, list, and patch permissions on deployments in the relevant namespaces.
 
+# License
+
+MIT — feel free to use, modify, and contribute! 🤘
 
