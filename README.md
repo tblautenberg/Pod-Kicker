@@ -1,18 +1,43 @@
-🚀 Pod Kicker is a lightweight web server built in Go, designed to automatically restart existing Kubernetes deployments whenever a new image is pushed to Docker Hub.
+🚀 Pod Kicker
+Pod Kicker is a lightweight web server written in Go, designed to automatically restart existing Kubernetes deployments whenever a new image is pushed to Docker Hub.
 
-To get Pod Kicker up and running, make sure you’ve got the following in place:
+🔧 Prerequisites
+To get Pod Kicker working, make sure the following are in place:
 
-GitHub Actions CI/CD pipeline in your application’s GitHub repo — it should be configured to build and push your image to Docker Hub.
+GitHub Actions CI/CD pipeline
+Your application’s GitHub repository should include a workflow that builds and pushes your Docker image to Docker Hub.
+🐙⚙️
 
-A webhook set up on Docker Hub to trigger whenever a new image is pushed. 🔁🐳
+Webhook on Docker Hub
+Configure a webhook to trigger when a new image is pushed.
+🔁🐳
 
-That’s it! 🎉
+That's all it takes! 🎉
 
-To run Pod Kicker inside Kubernetes:
+📦 Running Pod Kicker in Kubernetes
+You can run Pod Kicker in your Kubernetes cluster in one of two ways:
 
-Build and package it into a Docker image (feel free to customize the code as needed).
-Or, use the latest pre-built image from XXXXXXXXX 🧪.
+Build your own image
+Clone the repo and build your own Docker image — customize as needed.
 
-By default it uses port 8450, and as of now only has /KickThatPod post endpoint (more will come :3)
+Use the latest pre-built image
+Pull the latest from: XXXXXXXXX
+🧪
 
-⚠️ Don’t forget to grant RBAC permissions to the Pod Kicker deployment, so it has the rights to restart your Kubernetes workloads. 🔐!
+Pod Kicker listens on port 8450 by default.
+
+🔁 Available Endpoint
+POST /KickThatPod
+Triggers a rollout restart of the target deployment.
+
+More endpoints coming soon! 😺
+
+🔐 RBAC Permissions
+Make sure your Pod Kicker deployment has the necessary RBAC permissions to restart deployments within your cluster.
+
+You’ll need to grant it access to:
+
+get, list, and patch on deployments in the appropriate namespace.
+
+📄 License
+MIT — feel free to use, modify, and contribute! 🤘
