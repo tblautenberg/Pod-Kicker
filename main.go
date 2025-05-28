@@ -12,6 +12,7 @@ import (
 func main() {
 
 	// Placeholder for API endpoints
+	http.HandleFunc("/updateDeployment", updateDeployment)
 
 	// Loading the URL of the image that we need to check webhooks from. We use bufio for I/O
 	reader := bufio.NewReader(os.Stdin)
@@ -26,7 +27,7 @@ func main() {
 
 	// Creation of the server
 	port := ":8450"
-	fmt.Printf("Server is now online and litsening for incomming requests on httpL://localhost%s 🖥️\n", port)
+	fmt.Printf("Server is now online and listening for incoming requests on http://localhost%s 🖥️\n", port)
 	err := http.ListenAndServe(port, nil)
 	// If err is not nill, print the following line and exit the program
 	if err != nil {
