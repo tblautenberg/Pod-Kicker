@@ -23,7 +23,7 @@ XXXXXXXXX
 
 By default, the server listens on port 8450 and currently supports a single POST endpoint:
 
-/KickThatPod
+/updateDeployment
 Additional endpoints and features are planned for future releases.
 
 # Deployment Permissions 
