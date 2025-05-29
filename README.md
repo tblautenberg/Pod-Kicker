@@ -1,6 +1,6 @@
 # Pod Kicker
 
-Pod Kicker is a lightweight Go-based web server designed to automatically restart Kubernetes deployments when a new container image is pushed to Docker Hub. Working and tested in Kubernetes 1.32.3, and with Ubuntu server 24.04.2 LTS
+Pod Kicker is a lightweight Go-based web server designed to automatically restart Kubernetes deployments when a JSON payload is recived from hub.docker.com webhook. Working and tested in Kubernetes 1.32.3, and with Ubuntu server 24.04.2 LTS
 
 Still a work in progress, but feel free to add PR if you want to help out!
 
