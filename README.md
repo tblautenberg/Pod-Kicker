@@ -18,18 +18,15 @@ A Docker Hub webhook configured to send a POST request to Pod Kicker when a new 
 
 # Usage
 
-Pod Kicker can be run inside Kubernetes either by building your own Docker image or by using the latest pre-built image available at:
-XXXXXXXXX
-
 By default, the server listens on port 8450 and currently supports a single POST endpoint:
 
-/updateDeployment
+www.yoururl.com/updateDeployment
 
 Additional endpoints and features are planned for future releases.
 
 # Deployment Permissions 
 
-Ensure the Pod Kicker deployment has the necessary RBAC permissions to restart deployments. At a minimum, it requires get, list, and patch permissions on deployments in the relevant namespaces.
+Ensure the Pod Kicker deployment has the necessary RBAC permissions to restart deployments. At a minimum, it requires get, list, and patch permissions on deployments in the relevant namespaces. There is a default yaml file, where it i's already configured.
 
 # Docker image
 
