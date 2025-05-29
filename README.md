@@ -31,6 +31,12 @@ Additional endpoints and features are planned for future releases.
 
 Ensure the Pod Kicker deployment has the necessary RBAC permissions to restart deployments. At a minimum, it requires get, list, and patch permissions on deployments in the relevant namespaces.
 
+# Docker image
+
+https://hub.docker.com/r/hauro/pod-kicker
+
+If you dont want to edit the code, just configure the deployment.yaml file to your needs - then it works out of the box. Remember to set target repo, deployment, in the ENV vars.
+
 # License
 
 MIT — feel free to use, modify, and contribute! 🤘
